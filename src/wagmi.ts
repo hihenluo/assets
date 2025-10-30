@@ -17,10 +17,10 @@ createAppKit({
   networks: [base],
   projectId,
   metadata: {
-    name: "Critter Hole",
-    description: "Critter Hole Game on Base",
-    url: "https://critterholes.xyz",
-    icons: ["https://critterholes.xyz/logo.png"],
+    name: "sp",
+    description: "sp Game on Base",
+    url: "https://assets-dhl.pages.dev",
+    icons: ["https://assets-dhl.pages.dev/logo.png"],
   },
   features: {
     email: false,

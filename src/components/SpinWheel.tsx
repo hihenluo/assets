@@ -9,7 +9,7 @@ import {
 } from "wagmi";
 import { parseEther } from "viem";
 
-const NFT_CONTRACT_ADDRESS = "0xDed766dB5140DE5d36D38500035e470EB28D7fC7";
+const NFT_CONTRACT_ADDRESS = "0x";
 const NFT_ABI = [
   {
     constant: true,
@@ -168,7 +168,7 @@ export default function SpinWheel({ address, onSpinSuccess }: SpinWheelProps) {
     try {
       await sdk.actions.composeCast({
         text: `I just won ${winData.label} on Spin Wheel!`,
-        embeds: ["https://wheel.exapp.xyz"],
+        embeds: [""],
       });
     } catch (error) {
       console.error("Error sharing cast:", error);

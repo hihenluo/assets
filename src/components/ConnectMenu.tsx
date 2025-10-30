@@ -6,8 +6,8 @@ import { sdk } from "@farcaster/miniapp-sdk";
 import { isAddressBanned } from "../utils/bannedAddresses";
 import { parseEther } from "viem";
 
-const DONATE_ADDRESS = "0x893E76AB37Be1b3e26732fE9cede1f0015599B47";
-const VIP_CONTRACT = "0xDed766dB5140DE5d36D38500035e470EB28D7fC7";
+const DONATE_ADDRESS = "0x";
+const VIP_CONTRACT = "0x";
 
 export default function ConnectMenu() {
   const { isConnected, address } = useAccount();
@@ -19,8 +19,8 @@ export default function ConnectMenu() {
   const [vipOpen, setVipOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [frameAdded, setFrameAdded] = useState(false);
+  const [showSpin, setShowSpin] = useState(false);
 
-  // VIP Mint
   const {
     data: hash,
     error: mintError,
@@ -54,7 +54,6 @@ export default function ConnectMenu() {
     }
   }, [address]);
 
-  // Automatically add Farcaster frame when wallet is connected
   useEffect(() => {
     const addFrame = async () => {
       try {
@@ -64,11 +63,13 @@ export default function ConnectMenu() {
         console.error("Error adding frame:", error);
       }
     };
-
-    if (isConnected && !frameAdded) {
-      addFrame();
-    }
+    if (isConnected && !frameAdded) addFrame();
   }, [isConnected, frameAdded]);
+
+  useEffect(() => {
+    if (isConnected && address) setShowSpin(true);
+    else setShowSpin(false);
+  }, [isConnected, address]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(DONATE_ADDRESS);
@@ -79,21 +80,16 @@ export default function ConnectMenu() {
   const sliceAddress = (addr: string) => addr.slice(0, 10) + "..." + addr.slice(-6);
 
   useEffect(() => {
-    if (!isConnected) {
-      setFrameAdded(false);
-    }
+    if (!isConnected) setFrameAdded(false);
   }, [isConnected]);
 
-  // ✅ Jika wallet sudah connect
-  if (isConnected && address && frameAdded) {
+  if (isConnected && address && frameAdded && showSpin) {
     return (
       <div className="relative w-full max-w-md flex flex-col items-center gap-4">
         <div className="flex justify-between items-center w-full px-2">
-          {/* UX Button dari Reown */}
           <div className="flex items-center gap-2">
             <appkit-button />
           </div>
-
           <button
             onClick={() => setVipOpen(true)}
             className="bg-yellow-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-yellow-600 transition"
@@ -122,7 +118,6 @@ export default function ConnectMenu() {
           </div>
         )}
 
-        {/* Donate Modal */}
         {donateOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg p-6 w-full max-w-sm relative">
@@ -133,9 +128,7 @@ export default function ConnectMenu() {
                 ❌
               </button>
               <h2 className="text-xl font-bold mb-2 text-center">Donate For Spin Wheel</h2>
-              <p className="text-sm text-center mb-4">
-                Only Send - ETH Base - Celo - click to copy
-              </p>
+              <p className="text-sm text-center mb-4">Only Send - ETH Base - Celo - click to copy</p>
               <div
                 onClick={copyToClipboard}
                 className="bg-gray-100 border text-center text-sm px-4 py-3 rounded-lg cursor-pointer hover:bg-gray-200 select-all truncate"
@@ -143,16 +136,11 @@ export default function ConnectMenu() {
               >
                 {sliceAddress(DONATE_ADDRESS)}
               </div>
-              {copied && (
-                <p className="text-green-600 text-xs text-center mt-2">
-                  Address copied to clipboard!
-                </p>
-              )}
+              {copied && <p className="text-green-600 text-xs text-center mt-2">Address copied to clipboard!</p>}
             </div>
           </div>
         )}
 
-        {/* VIP Modal */}
         {vipOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg p-6 w-full max-w-sm relative">
@@ -163,10 +151,7 @@ export default function ConnectMenu() {
                 ❌
               </button>
               <h2 className="text-xl font-bold mb-2 text-center">VIP Membership</h2>
-              <p className="text-sm text-center mb-4">
-                Buy & Hold NFT to get 20 Spin per day forever
-              </p>
-
+              <p className="text-sm text-center mb-4">Buy & Hold NFT to get 20 Spin per day forever</p>
               <button
                 onClick={handleMint}
                 disabled={isMintLoading || isConfirming}
@@ -204,20 +189,17 @@ export default function ConnectMenu() {
                   "Mint VIP NFT (0.00044 ETH)"
                 )}
               </button>
-
               {hash && (
                 <div className="mt-4 p-2 bg-gray-100 rounded text-xs break-all">
                   <p>Transaction Hash:</p>
                   <p>{hash}</p>
                 </div>
               )}
-
               {isConfirmed && (
                 <div className="mt-4 p-2 bg-green-100 text-green-800 rounded text-center">
                   Successfully minted VIP NFT!
                 </div>
               )}
-
               {mintError && (
                 <div className="mt-4 p-2 bg-red-100 text-red-800 rounded text-center">
                   {mintError.message.includes("User rejected") ||
@@ -230,17 +212,12 @@ export default function ConnectMenu() {
           </div>
         )}
 
-        {/* Game components */}
-        <SpinWheel
-          address={address}
-          onSpinSuccess={() => setRefreshTrigger((prev) => prev + 1)}
-        />
+        <SpinWheel address={address} onSpinSuccess={() => setRefreshTrigger((prev) => prev + 1)} />
         <WinnersHistory refreshTrigger={refreshTrigger} />
       </div>
     );
   }
 
-  // ✅ Jika belum connect → pakai UX Button Reown
   return (
     <div className="flex justify-center items-center">
       <appkit-button />
