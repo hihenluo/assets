@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Wheel } from "react-custom-roulette";
-import { sdk } from "@farcaster/frame-sdk";
+import { sdk } from "@farcaster/miniapp-sdk";
 import {
   useAccount,
   useSendTransaction,
