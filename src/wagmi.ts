@@ -1,20 +1,20 @@
-// src/wagmi.ts
+import { farcasterFrame } from "@farcaster/frame-wagmi-connector";
+import { http, createConfig } from "wagmi";
+import { base, mainnet } from "wagmi/chains";
 
-import { createConfig, http } from 'wagmi'
-import { base } from 'wagmi/chains' 
-import { farcasterMiniApp as miniAppConnector } from '@farcaster/miniapp-wagmi-connector'
-import { metaMask, walletConnect } from '@wagmi/connectors'
-
-const projectId = 'cd169b99d42633d1d81f5aee613d0eed'; 
-    
 export const config = createConfig({
-  chains: [base], 
+  chains: [base, mainnet],
+  connectors: [farcasterFrame()],
   transports: {
     [base.id]: http(),
+    [mainnet.id]: http(),
   },
-  connectors: [
-    metaMask(),
-    walletConnect({ projectId }),
-    miniAppConnector(),
-  ]
-})
+});
+
+
+
+declare module "wagmi" {
+  interface Register {
+    config: typeof config;
+  }
+}

@@ -1,26 +1,28 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjExNDE4MzQsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg3YkFhYTNkYWQ5YjZBZTBGMTVCNTE1YkVFMWU1NkRjYUNGQkE5NTE2In0",
-    "payload": "eyJkb21haW4iOiJjcml0dGVyaG9sZXMueHl6In0",
-    "signature": "MHgyOTg0NjVmNDU0NmZkZTA0ODEyYzQyMzVkMDVkNGVhN2I4MDcwODYyZTg5MTk3ZWJlYzI5YmFiNDBlMTQ0MGVmM2E5OThmNjA2MTQ1NTIwYWMzMDE3Zjc0MDI0OTFjMDRlYTNlYzlmMGI4ZjM2ZjgxNGE2MjFhODNhZjViMDZkYjFj"
+    "header": "eyJmaWQiOjI5MTc1MiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDE0Mzc2NjcwMjQ3Mzc0MWM2ODIzYzBjMUVBMTRjOTg3NTFFNjBFRTAifQ",
+    "payload": "eyJkb21haW4iOiJ3aGVlbC5leGFwcC54eXoifQ",
+    "signature": "MHhkNjE0ZTJkNmRlYTJkNWU4YTBjZTIwYWQ4Y2ZhNDVhNGQzMjc1NWQ2ODNlZTBiZGNjMTlkNWZlN2NiNTQwOTA3NmJmZWQ0NmY0YzEyYzVjYmFmZDdlZThlODZkYjYzZDBiYTJlM2YzMGQwYWQ3ZGI2NTdjNjExZDk1iconZjMDQ0MjFj"
   },
   "frame": {
     "version": "1",
-    "name": "Critter Holes",
-    "iconUrl": "https://critterholes.xyz/icon.png",
-    "homeUrl": "https://critterholes.xyz",
-    "imageUrl": "https://critterholes.xyz/image.png",
-    "buttonTitle": "beat it now",
-    "splashImageUrl": "https://critterholes.xyz/logo.png",
-    "splashBackgroundColor": "#9c5000",
-    "webhookUrl": "https://api.neynar.com/f/app/4bee5972-f7d7-460e-8762-d4dac25e87aa/event",
-    "description": "Critterholes is Mini Game play to Earn point",
-    "primaryCategory": "games",
-    "tags": ["games","play"],
-    "heroImageUrl": "https://critterholes.xyz/image.png",
-    "tagline": "Critterholes",
-    "ogTitle": "Critterholes",
-    "ogDescription": "Critterholes is Mini Game play to Earn point",
-    "ogImageUrl": "https://critterholes.xyz/image.png"
+    "name": "Spin Wheel",
+    "iconUrl": "https://wheel.exapp.xyz/icon.png",
+    "homeUrl": "https://wheel.exapp.xyz",
+    "imageUrl": "https://wheel.exapp.xyz/icon.png",
+    "buttonTitle": "Play Spin",
+    "splashImageUrl": "https://wheel.exapp.xyz/icon.png",
+    "splashBackgroundColor": "#eeccff",
+    "webhookUrl": "https://api.neynar.com/f/app/98b485b8-717c-418d-8ac2-fb311619beb8/event",
+    "subtitle": "Spin Wheel is Fun",
+    "description": "Spin Wheel is Fun",
+    "screenshotUrls": [],
+     "primaryCategory": "games",
+    "tags": ["spin", "win", "nft", "mint"],
+    "heroImageUrl": "https://wheel.exapp.xyz/icon.png",
+    "tagline": "Spin Wheel is Fun",
+    "iconTitle": "Spin Wheel",
+    "iconDescription": "Spin Wheel is Fun",
+    "iconImageUrl": "https://wheel.exapp.xyz/icon.png"
   }
 }
