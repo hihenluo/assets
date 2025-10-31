@@ -7,7 +7,7 @@ export default function ConnectMenu() {
   if (isConnected && address) {
     return (
       <div className="relative w-full max-w-md flex flex-col items-center gap-4">
-        <div className="flex justify-end items-center w-full px-2">
+        <div className="flex justify-center items-center w-full px-2">
           <appkit-button />
         </div>
 
