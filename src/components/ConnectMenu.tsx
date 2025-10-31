@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
-import { useAccount, useDisconnect, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+import {
+  useAccount,
+  useDisconnect,
+  useWaitForTransactionReceipt,
+  useWriteContract,
+} from "wagmi";
 import SpinWheel from "./SpinWheel";
-import WinnersHistory from "./WinnersHistory";
 import { sdk } from "@farcaster/miniapp-sdk";
 import { isAddressBanned } from "../utils/bannedAddresses";
 import { parseEther } from "viem";
@@ -13,7 +17,6 @@ export default function ConnectMenu() {
   const { isConnected, address } = useAccount();
   const { disconnect } = useDisconnect();
 
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [donateOpen, setDonateOpen] = useState(false);
   const [vipOpen, setVipOpen] = useState(false);
@@ -77,7 +80,8 @@ export default function ConnectMenu() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const sliceAddress = (addr: string) => addr.slice(0, 10) + "..." + addr.slice(-6);
+  const sliceAddress = (addr: string) =>
+    addr.slice(0, 10) + "..." + addr.slice(-6);
 
   useEffect(() => {
     if (!isConnected) setFrameAdded(false);
@@ -127,8 +131,12 @@ export default function ConnectMenu() {
               >
                 ❌
               </button>
-              <h2 className="text-xl font-bold mb-2 text-center">Donate For Spin Wheel</h2>
-              <p className="text-sm text-center mb-4">Only Send - ETH Base - Celo - click to copy</p>
+              <h2 className="text-xl font-bold mb-2 text-center">
+                Donate For Spin Wheel
+              </h2>
+              <p className="text-sm text-center mb-4">
+                Only Send - ETH Base - Celo - click to copy
+              </p>
               <div
                 onClick={copyToClipboard}
                 className="bg-gray-100 border text-center text-sm px-4 py-3 rounded-lg cursor-pointer hover:bg-gray-200 select-all truncate"
@@ -136,7 +144,11 @@ export default function ConnectMenu() {
               >
                 {sliceAddress(DONATE_ADDRESS)}
               </div>
-              {copied && <p className="text-green-600 text-xs text-center mt-2">Address copied to clipboard!</p>}
+              {copied && (
+                <p className="text-green-600 text-xs text-center mt-2">
+                  Address copied to clipboard!
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -150,8 +162,12 @@ export default function ConnectMenu() {
               >
                 ❌
               </button>
-              <h2 className="text-xl font-bold mb-2 text-center">VIP Membership</h2>
-              <p className="text-sm text-center mb-4">Buy & Hold NFT to get 20 Spin per day forever</p>
+              <h2 className="text-xl font-bold mb-2 text-center">
+                VIP Membership
+              </h2>
+              <p className="text-sm text-center mb-4">
+                Buy & Hold NFT to get 20 Spin per day forever
+              </p>
               <button
                 onClick={handleMint}
                 disabled={isMintLoading || isConfirming}
@@ -212,8 +228,7 @@ export default function ConnectMenu() {
           </div>
         )}
 
-        <SpinWheel address={address} onSpinSuccess={() => setRefreshTrigger((prev) => prev + 1)} />
-        <WinnersHistory refreshTrigger={refreshTrigger} />
+        <SpinWheel />
       </div>
     );
   }
