@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Analytics } from "@vercel/analytics/react"
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { WagmiProvider } from "wagmi";
@@ -16,7 +15,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <App />
-         <Analytics />
       </QueryClientProvider>
     </WagmiProvider>
   </React.StrictMode>,
