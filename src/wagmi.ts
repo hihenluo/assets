@@ -18,8 +18,8 @@ createAppKit({
   metadata: {
     name: "Critter Hole",
     description: "Critter Hole Game on Base",
-    url: "https://critterholes.xyz",
-    icons: ["https://critterholes.xyz/logo.png"],
+    url: "https://assets-dhl.pages.dev/",
+    icons: ["https://assets-dhl.pages.dev//logo.png"],
   },
   features: {
     history: false,
