@@ -8,8 +8,7 @@ export const wagmiAdapter = new WagmiAdapter({
   projectId,
   networks: [base],
   ssr: true,
-  connectors: [
-  ],
+  connectors: [],
 });
 
 createAppKit({
@@ -17,20 +16,16 @@ createAppKit({
   networks: [base],
   projectId,
   metadata: {
-    name: "sp",
-    description: "sp Game on Base",
-    url: "https://assets-dhl.pages.dev",
-    icons: ["https://assets-dhl.pages.dev/logo.png"],
+    name: "Critter Hole",
+    description: "Critter Hole Game on Base",
+    url: "https://critterholes.xyz",
+    icons: ["https://critterholes.xyz/logo.png"],
   },
   features: {
-    email: false,
-    socials: false,
-    swaps: false,
-    onramp: false,
     history: false,
     send: true,
   },
-  themeMode: "light",
+  themeMode: "dark",
 });
 
 export const config = wagmiAdapter.wagmiConfig;
