@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI5NzMzNywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDk2RjlCMzkzZkZjOGQyODMxODY5QURlNEYzRDBiM0U1ZmRlNDJDYTYifQ",
+    "payload": "eyJkb21haW4iOiJhc3NldHMtZGhsLnBhZ2VzLmRldiJ9",
+    "signature": "o8XVj94TdH4QjgUbxCR6zi9T6ZwtokBRZO78lp69DYt3gUQ1KiuRYUdPcfCx+77hYw1KfOGE8vDHnWLEPnhWcBs="
+  },
+  "frame": {
+    "version": "1",
+    "name": "Example Frame",
+    "iconUrl": "https://assets-dhl.pages.dev/icon.png",
+    "homeUrl": "https://assets-dhl.pages.dev",
+    "imageUrl": "https://assets-dhl.pages.dev/image.png",
+    "buttonTitle": "Check this out",
+    "splashImageUrl": "https://assets-dhl.pages.dev/splash.png",
+    "splashBackgroundColor": "#eeccff",
+    "webhookUrl": "https://assets-dhl.pages.dev/api/webhook"
+  }
+}
