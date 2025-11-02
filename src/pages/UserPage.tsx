@@ -22,10 +22,7 @@ export const UserPage: React.FC = () => {
     }
   });
 
-  const truncateAddress = (addr: string) => {
-    if (!addr) return '';
-    return `${addr.substring(0, 6)}...${addr.substring(addr.length - 4)}`;
-  };
+  
 
   return (
     <div
@@ -54,9 +51,10 @@ export const UserPage: React.FC = () => {
           {farcasterAccount?.username ? `@${farcasterAccount.username}` : 'Guest'}
         </h1>
 
-        <p className="text-md text-white/60 mb-6 font-mono">
-          {address ? truncateAddress(address) : 'Not Connected'}
+        <p className="text-3xl text-white/60 mb-6 font-bold">
+          <appkit-account-button balance='hide' />
         </p>
+       
 
         <div className="bg-black/40 rounded-lg p-4 w-full text-center">
           <p className="text-lg text-white/80">Your Critter Holes Points</p>
