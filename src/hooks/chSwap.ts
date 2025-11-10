@@ -2,9 +2,7 @@
 
 /**
  * ABI for your CHSwap contract.
- * !! IMPORTANT: Copy the full ABI from your Hardhat
- * artifacts/contracts/CHSwap.sol/CHSwap.json file.
- * This is a minimal version for the key functions.
+
  */
 export const chSwapAbi = [
   // --- View Functions (Read) ---
