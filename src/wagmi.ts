@@ -2,30 +2,29 @@
 
 import { createAppKit } from "@reown/appkit/react";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { base } from "@reown/appkit/networks";
+import { celo } from "@reown/appkit/networks";
 
 const projectId = "cd169b99d42633d1d81f5aee613d0eed";
 
 export const wagmiAdapter = new WagmiAdapter({
   projectId,
-  networks: [base],
+  networks: [celo],
   ssr: true,
   connectors: [],
 });
 
 createAppKit({
   adapters: [wagmiAdapter],
-  networks: [base],
+  networks: [celo],
   projectId,
   metadata: {
     name: "Critter Hole",
-    description: "Critter Hole Game on Base",
-    url: "https://assets-dhl.pages.dev/",
-    icons: ["https://assets-dhl.pages.dev//logo.png"],
+    description: "Critter Hole Game on Celo",
+    url: "https://critterholes.xyz/",
+    icons: ["https://critterholes.xyz//logo.png"],
   },
   features: {
     history: false,
-    send: true,
   },
   themeMode: "dark",
 });
