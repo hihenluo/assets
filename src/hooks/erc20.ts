@@ -2,7 +2,6 @@
 
 /**
  * Minimal ERC20 ABI for allowance, approve, and balanceOf.
- * Using 'as const' helps Wagmi infer types correctly.
  */
 export const erc20Abi = [
   {
