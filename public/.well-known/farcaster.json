@@ -1,3 +1,5 @@
+// farcaster.json , change to your domain. for Association get on Farcaster Mobile on Developer menu
+
 {
   "accountAssociation": {
     "header": "eyJmaWQiOjI5NzMzNywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDk2RjlCMzkzZkZjOGQyODMxODY5QURlNEYzRDBiM0U1ZmRlNDJDYTYifQ",
