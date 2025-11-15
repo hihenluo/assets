@@ -24,10 +24,12 @@ createAppKit({
     icons: ["https://critterholes.xyz//logo.png"],
   },
   features: {
+    analytics: true,
     email: false
     socials: [
       "farcaster"
     ],
+  
   },
   themeMode: "light",
 });
