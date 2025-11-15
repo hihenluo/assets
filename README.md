@@ -1,4 +1,4 @@
-# 🕳️ CritterHoles on Celo
+# 🕳️ Clone Game
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)
