@@ -1,3 +1,5 @@
+// api/claim.ts - deploy contract on https://github.com/critterholes/hardhat
+
 import { ethers } from "ethers";
 
 interface RequestBody {
